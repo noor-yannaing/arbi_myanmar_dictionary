@@ -1,0 +1,48 @@
+name: arabic_myanmar_dictionary
+description: An offline Arabic–Myanmar dictionary with full Arabic vowel marks.
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - AMDText_Alif_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Ba_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Ta_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Tha_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Jim_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Ha_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Kha_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Dal_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Dhal_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Ra_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Zay_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Sin_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Shin_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Sad_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Dad_Arabic_Myanmar_with_Harakat.json
+    - AMDText_TaEmphatic_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Zha_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Ayn_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Ghayn_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Fa_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Qaf_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Kaf_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Lam_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Mim_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Nun_Arabic_Myanmar_with_Harakat.json
+    - AMDText_HaFinal_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Waw_Arabic_Myanmar_with_Harakat.json
+    - AMDText_Ya_Arabic_Myanmar_with_Harakat.json
