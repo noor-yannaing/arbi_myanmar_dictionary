@@ -16,3 +16,4 @@ macos/Flutter/ephemeral/
 *.aab
 *.sha256
 .signing/
+__pycache__/

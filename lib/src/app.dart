@@ -4,6 +4,7 @@ import 'config/app_content.dart';
 import 'screens/home_shell.dart';
 import 'services/dictionary_repository.dart';
 import 'theme/app_theme.dart';
+import 'widgets/app_logo.dart';
 import 'widgets/islamic_pattern.dart';
 
 class DictionaryApp extends StatefulWidget {
@@ -69,20 +70,7 @@ class SplashScreen extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    width: 112,
-                    height: 112,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withValues(alpha: 0.1),
-                      border: Border.all(color: AppColors.gold, width: 2),
-                    ),
-                    child: const Icon(
-                      Icons.menu_book_rounded,
-                      size: 52,
-                      color: AppColors.gold,
-                    ),
-                  ),
+                  const AppLogo(size: 128),
                   const SizedBox(height: 28),
                   Text(
                     AppContent.appName,

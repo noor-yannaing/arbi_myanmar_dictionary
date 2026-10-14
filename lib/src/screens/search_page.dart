@@ -6,6 +6,7 @@ import '../config/app_content.dart';
 import '../models/dictionary_entry.dart';
 import '../services/dictionary_repository.dart';
 import '../theme/app_theme.dart';
+import '../widgets/app_logo.dart';
 import '../widgets/dictionary_entry_card.dart';
 import '../widgets/islamic_pattern.dart';
 import 'entry_details_page.dart';
@@ -211,19 +212,7 @@ class _SearchPageState extends State<SearchPage>
             children: [
               Row(
                 children: [
-                  Container(
-                    width: 44,
-                    height: 44,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white.withValues(alpha: 0.1),
-                      border: Border.all(color: AppColors.gold),
-                    ),
-                    child: const Icon(
-                      Icons.menu_book_rounded,
-                      color: AppColors.gold,
-                    ),
-                  ),
+                  const AppLogo(size: 56),
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(

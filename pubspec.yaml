@@ -1,7 +1,7 @@
 name: arabic_myanmar_dictionary
 description: An offline Arabic–Myanmar dictionary with full Arabic vowel marks.
 publish_to: "none"
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -18,6 +18,8 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - assets/profile/developer.jpeg
+    - assets/branding/nur-language-bridge.png
     - AMDText_Alif_Arabic_Myanmar_with_Harakat.json
     - AMDText_Ba_Arabic_Myanmar_with_Harakat.json
     - AMDText_Ta_Arabic_Myanmar_with_Harakat.json

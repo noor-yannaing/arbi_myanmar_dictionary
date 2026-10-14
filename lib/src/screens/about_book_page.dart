@@ -98,37 +98,37 @@ class AboutBookPage extends StatelessWidget {
                   InfoCard(
                     title: 'About the Author',
                     icon: Icons.person_outline_rounded,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: 62,
-                          height: 62,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Color(0xFFF0F4FC),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 62,
+                            height: 62,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Color(0xFFF0F4FC),
+                            ),
+                            child: const Icon(
+                              Icons.person_rounded,
+                              size: 34,
+                              color: AppColors.royalBlue,
+                            ),
                           ),
-                          child: const Icon(
-                            Icons.person_rounded,
-                            size: 34,
-                            color: AppColors.royalBlue,
+                          const SizedBox(height: 12),
+                          Text(
+                            AppContent.authorName,
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
-                        ),
-                        const SizedBox(width: 15),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                AppContent.authorName,
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                              const SizedBox(height: 6),
-                              Text(AppContent.authorDescription),
-                            ],
+                          const SizedBox(height: 6),
+                          Text(
+                            AppContent.authorDescription,
+                            textAlign: TextAlign.center,
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],

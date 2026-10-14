@@ -34,49 +34,38 @@ class AboutDeveloperPage extends StatelessWidget {
                   InfoCard(
                     title: 'Skills & Technologies',
                     icon: Icons.workspace_premium_outlined,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Skills',
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                        const SizedBox(height: 10),
-                        const _TagWrap(values: AppContent.developerSkills),
-                        const SizedBox(height: 20),
-                        Text(
-                          'Technologies',
-                          style: Theme.of(context).textTheme.titleMedium,
-                        ),
-                        const SizedBox(height: 10),
-                        const _TagWrap(
-                          values: AppContent.developerTechnologies,
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 14),
-                  InfoCard(
-                    title: 'Experience',
-                    icon: Icons.work_outline_rounded,
-                    child: Column(
-                      children: [
-                        for (var index = 0;
-                            index < AppContent.developerExperience.length;
-                            index++) ...[
-                          _ExperienceTile(
-                            experience: AppContent.developerExperience[index],
+                    centerHeader: true,
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Skills',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleMedium,
                           ),
-                          if (index < AppContent.developerExperience.length - 1)
-                            const Divider(height: 28),
+                          const SizedBox(height: 10),
+                          const _TagWrap(values: AppContent.developerSkills),
+                          const SizedBox(height: 20),
+                          Text(
+                            'Technologies',
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.titleMedium,
+                          ),
+                          const SizedBox(height: 10),
+                          const _TagWrap(
+                            values: AppContent.developerTechnologies,
+                          ),
                         ],
-                      ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 14),
                   InfoCard(
                     title: 'Let’s Connect',
                     icon: Icons.alternate_email_rounded,
+                    centerHeader: true,
                     child: _ConnectSection(
                       onCopy: (label, value) =>
                           _copyContact(context, label, value),
@@ -94,6 +83,7 @@ class AboutDeveloperPage extends StatelessWidget {
   Widget _buildProfileCard(BuildContext context) {
     return InfoCard(
       title: AppContent.developerName,
+      centerHeader: true,
       child: Column(
         children: [
           Container(
@@ -104,15 +94,21 @@ class AboutDeveloperPage extends StatelessWidget {
               color: const Color(0xFFF0F4FC),
               border: Border.all(color: AppColors.gold, width: 1.5),
             ),
-            child: const Icon(
-              Icons.person_rounded,
-              size: 49,
-              color: AppColors.royalBlue,
+            clipBehavior: Clip.antiAlias,
+            child: ClipOval(
+              child: Image.asset(
+                AppContent.developerImage,
+                width: 92,
+                height: 92,
+                fit: BoxFit.cover,
+                semanticLabel: 'Photo of ${AppContent.developerName}',
+              ),
             ),
           ),
           const SizedBox(height: 16),
           Text(
             AppContent.developerRole,
+            textAlign: TextAlign.center,
             style: const TextStyle(
               color: AppColors.royalBlue,
               fontWeight: FontWeight.w600,
@@ -149,6 +145,7 @@ class _TagWrap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      alignment: WrapAlignment.center,
       spacing: 8,
       runSpacing: 8,
       children: values
@@ -171,61 +168,6 @@ class _TagWrap extends StatelessWidget {
             ),
           )
           .toList(),
-    );
-  }
-}
-
-class _ExperienceTile extends StatelessWidget {
-  const _ExperienceTile({required this.experience});
-
-  final DeveloperExperience experience;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: 42,
-          height: 42,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: const Color(0xFFF1F5FD),
-            border: Border.all(color: AppColors.gold),
-          ),
-          child: const Icon(
-            Icons.code_rounded,
-            size: 20,
-            color: AppColors.royalBlue,
-          ),
-        ),
-        const SizedBox(width: 13),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                experience.title,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              const SizedBox(height: 3),
-              Text(
-                [
-                  experience.organization,
-                  experience.period,
-                ].where((part) => part.isNotEmpty).join(' · '),
-                style: const TextStyle(
-                  color: AppColors.royalBlue,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(experience.description),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }

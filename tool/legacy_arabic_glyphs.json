@@ -1,0 +1,19 @@
+{
+  "description": "Transcriptions of ligatures rendered from the original 2-MUHAMMADI-BOLD-FINAL font. Dotless final yeh is transcribed as U+0649, matching the visible source outline; existing diacritics and extraction-review flags are preserved.",
+  "evidence": "Generate the source-glyph-specimens.pdf with inspect_source_fonts.py; compare individual glyphs and their source-page contexts.",
+  "glyphs": {
+    "g1901": "حى", "g1902": "جى", "g1903": "خى",
+    "g1905": "حى", "g1906": "جى", "g1907": "خى",
+    "g1909": "عى", "g1910": "غى", "g1911": "عى", "g1912": "غى",
+    "g1913": "طى", "g1914": "ظى", "g1915": "طى", "g1916": "ظى",
+    "g1917": "عن", "g1918": "غن", "g1919": "من", "g1930": "مج",
+    "g1941": "فى", "g1942": "قى", "g1944": "بن", "g1945": "تن",
+    "g1946": "ثن", "g1948": "ين", "g1950": "طم", "g1951": "ظم",
+    "g1952": "طح", "g1964": "يؤ", "g1966": "طم", "g1968": "عى",
+    "g1969": "على", "g1971": "سبح", "g1996": "بو", "g1997": "تو",
+    "g1998": "ثو", "g1999": "نو", "g2000": "يو", "g2005": "بر",
+    "g2006": "تر", "g2007": "ثر", "g2008": "نر", "g2009": "ير",
+    "g2010": "بز", "g2011": "تز", "g2013": "نز", "g2014": "يز",
+    "g2015": "عق"
+  }
+}

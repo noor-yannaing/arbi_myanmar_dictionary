@@ -81,10 +81,12 @@ class InfoCard extends StatelessWidget {
     required this.child,
     super.key,
     this.icon,
+    this.centerHeader = true,
   });
 
   final String title;
   final IconData? icon;
+  final bool centerHeader;
   final Widget child;
 
   @override
@@ -95,21 +97,40 @@ class InfoCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                if (icon != null) ...[
-                  Icon(icon, size: 22, color: AppColors.gold),
-                  const SizedBox(width: 10),
-                ],
-                Expanded(
-                  child: Text(title,
-                      style: Theme.of(context).textTheme.titleLarge),
+            if (centerHeader)
+              SizedBox(
+                width: double.infinity,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (icon != null) ...[
+                      Icon(icon, size: 22, color: AppColors.gold),
+                      const SizedBox(height: 8),
+                    ],
+                    Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              )
+            else
+              Row(
+                children: [
+                  if (icon != null) ...[
+                    Icon(icon, size: 22, color: AppColors.gold),
+                    const SizedBox(width: 10),
+                  ],
+                  Expanded(
+                    child: Text(title,
+                        style: Theme.of(context).textTheme.titleLarge),
+                  ),
+                ],
+              ),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 16),
-              child: GoldDivider(),
+              child: Center(child: GoldDivider()),
             ),
             child,
           ],
@@ -133,30 +154,30 @@ class FeatureTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: 42,
-          height: 42,
-          decoration: BoxDecoration(
-            color: const Color(0xFFF3F6FD),
-            borderRadius: BorderRadius.circular(13),
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: 42,
+            height: 42,
+            decoration: BoxDecoration(
+              color: const Color(0xFFF3F6FD),
+              borderRadius: BorderRadius.circular(13),
+            ),
+            child: Icon(icon, size: 21, color: AppColors.royalBlue),
           ),
-          child: Icon(icon, size: 21, color: AppColors.royalBlue),
-        ),
-        const SizedBox(width: 13),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title, style: Theme.of(context).textTheme.titleMedium),
-              const SizedBox(height: 3),
-              Text(subtitle),
-            ],
+          const SizedBox(height: 10),
+          Text(
+            title,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
-        ),
-      ],
+          const SizedBox(height: 3),
+          Text(subtitle, textAlign: TextAlign.center),
+        ],
+      ),
     );
   }
 }
